@@ -5,8 +5,6 @@ require_once DIR.'/src/JSONStorage.php';
 
 use App\JSONStorage;
 
-//testing of JSON and YAML serializators
-
 $json = new JSONStorage();
 $yaml = new \App\YAMLStorage();
 $json->set('book','nad_propastiu');
@@ -18,9 +16,9 @@ $data = $json->get('dog');
 
 $yaml->set('book','nad_propastiu');
 $yaml->set('dog','corgie');
-if($yaml->has('book')){
-    $yaml->remove('book');
-}
+//if($yaml->has('book')){
+//    $yaml->remove('book');
+//}
 
 $data1 = $yaml->get('dog');
 
