@@ -10,7 +10,6 @@ namespace App;
 use Symfony\Component\Yaml\Yaml;
 
 
-use Symfony\Component\Yaml\Yaml;
 
 class YAMLStorage extends AbstractController
 {
