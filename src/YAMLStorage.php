@@ -17,17 +17,24 @@ class YAMLStorage extends AbstractController
     {
         $arr = $this->getData();
         $arr[$key] = $value;
-        $dataJson = json_encode($arr);
-        file_put_contents('json_storage.json', $dataJson);
+        $dataJson = Yaml::dump($arr);
+        file_put_contents('yaml_storage.yaml', $dataJson);
     }
 
-    public function remove($value)
+    public function remove($key)
     {
-        // TODO: Implement remove() method.
+        $arr = $this->getData();
+        if(isset($arr[$key])){
+            unset($arr[$key]);
+            file_put_contents(yaml_storage.yaml,Yaml::dump($arr));
+            return true;
+        }
+        else
+            return false;
     }
 
     public function getData()
     {
-        // TODO: Implement getData() method.
+        return Yaml::parseFile('yaml_storage.yaml');
     }
 }
